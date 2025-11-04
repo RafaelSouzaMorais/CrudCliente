@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="MSTestSettings.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.10" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="MSTest" Version="3.6.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CrudProcessoSeletivo.Application\CrudProcessoSeletivo.Application.csproj" />
+    <ProjectReference Include="..\CrudProcessoSeletivo.Domain\CrudProcessoSeletivo.Domain.csproj" />
+    <ProjectReference Include="..\CrudProcessoSeletivo.Infrastructure\CrudProcessoSeletivo.Infrastructure.csproj" />
+    <ProjectReference Include="..\CrudProcessoSeletivo\CrudProcessoSeletivo.csproj" />
+  </ItemGroup>
+
+</Project>

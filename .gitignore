@@ -1,0 +1,15 @@
+﻿################################################################################
+# Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/CrudProcessoSeletivo/bin/Debug/net8.0
+/CrudProcessoSeletivo/obj
+/CrudProcessoSeletivo.Application/bin/Debug/net8.0
+/CrudProcessoSeletivo.Application/obj
+/CrudProcessoSeletivo.Domain/bin/Debug/net8.0
+/CrudProcessoSeletivo.Domain/obj
+/CrudProcessoSeletivo.Infrastructure/bin/Debug/net8.0
+/CrudProcessoSeletivo.Infrastructure/obj
+/CrudProcessoSeletivo.Tests/bin/Debug/net9.0
+/CrudProcessoSeletivo.Tests/obj

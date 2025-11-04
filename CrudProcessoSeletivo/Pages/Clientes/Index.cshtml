@@ -1,0 +1,64 @@
+@page
+@model CrudProcessoSeletivo.Pages.Clientes.IndexModel
+@{
+    ViewData["Title"] = "Gerenciar Clientes";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1>@ViewData["Title"]</h1>
+        <a asp-page="Create" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> Novo Cliente
+        </a>
+    </div>
+
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Message"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th class="text-center" style="width: 200px;">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var cliente in Model.Clientes)
+                    {
+                        <tr>
+                            <td>@cliente.Id.ToString().Substring(0, 8)</td>
+                            <td>@cliente.Nome</td>
+                            <td>@cliente.Email</td>
+                            <td>@cliente.Telefone</td>
+                            <td class="text-center">
+                                <a asp-page="Edit" asp-route-id="@cliente.Id" class="btn btn-sm btn-warning" title="Editar">
+                                    <i class="bi bi-pencil">Editar</i>
+                                </a>
+                                <a asp-page="Delete" asp-route-id="@cliente.Id" class="btn btn-sm btn-danger" title="Excluir">
+                                    <i class="bi bi-trash">Deletar</i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            @if (!Model.Clientes.Any())
+            {
+                <div class="alert alert-info text-center">
+                    <i class="bi bi-info-circle"></i> Nenhum cliente cadastrado.
+                </div>
+            }
+        </div>
+    </div>
+</div>

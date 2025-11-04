@@ -1,0 +1,17 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bem-vindo ao Sistema CRUD</h1>
+    <p class="lead">Gerenciamento de Clientes</p>
+    
+    <div class="mt-5">
+        <a asp-page="/Clientes/Index" class="btn btn-primary btn-lg">
+            <i class="bi bi-people-fill"></i> Gerenciar Clientes
+        </a>
+    </div>
+   
+</div>
